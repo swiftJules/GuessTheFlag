@@ -7,14 +7,16 @@
 
 import SwiftUI
 
-struct BlueTitle: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+struct BlueTitle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.largeTitle)
+            .foregroundColor(.blue)
     }
 }
 
-struct BlueTitle_Previews: PreviewProvider {
-    static var previews: some View {
-        BlueTitle()
+extension View {
+    func setBlueTitle() -> some View {
+        modifier(BlueTitle())
     }
 }
