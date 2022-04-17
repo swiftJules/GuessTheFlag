@@ -46,10 +46,7 @@ struct ContentView: View {
                             flagTapped(number)
                             turnCount += 1
                         } label: {
-                            Image(countries[number])
-                                .renderingMode(.original)
-                                .clipShape(Capsule())
-                                .shadow(radius: 5)
+                            FlagImage(country: countries[number])
                         }
                     }//:ForEach
                 }//:mid VStack
@@ -106,11 +103,5 @@ struct ContentView: View {
         showingScore = false
         score = 0
         turnCount = 0
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }
