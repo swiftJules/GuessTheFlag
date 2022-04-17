@@ -8,13 +8,11 @@
 import SwiftUI
 
 struct FlagImage: View {
+    let country: String
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-struct FlagImage_Previews: PreviewProvider {
-    static var previews: some View {
-        FlagImage()
+        Image(country)
+            .renderingMode(.original)
+            .clipShape(Capsule())
+            .shadow(radius: 5)
     }
 }
